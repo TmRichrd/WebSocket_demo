@@ -1,0 +1,144 @@
+.header_title {
+  font-size: 1.375rem;
+  font-weight: bold;
+  color: #1d2226;
+  opacity: 1;
+  text-align: center;
+  margin-top: 2.25rem;
+  margin-bottom: 2.875rem;
+}
+.logo {
+  text-align: center;
+  margin-bottom: 0.625rem;
+}
+.logo img {
+  width: 17rem;
+  height: 13.125rem;
+}
+.login_form {
+  width: 300px;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 2.1875rem;
+}
+.login_ref{
+  display: none;
+}
+.reg_form {
+  width: 300px;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 2.1875rem;
+  display: none;
+}
+.form_item {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.form_item .email_icon {
+  position: absolute;
+  width: 1.5625rem;
+  height: 1.25rem;
+  bottom: 0.625rem;
+}
+.form_item .lock_icon {
+  position: absolute;
+  width: 1.35rem;
+  height: 1.5rem;
+  bottom: 0.625rem;
+}
+.form_item .user_eye {
+  position: absolute;
+  width: 1.7375rem;
+  height: 1.2813rem;
+  right: 0;
+  bottom: 0.625rem;
+  cursor: pointer;
+}
+.form_input {
+  width: 16.5625rem;
+  border: none;
+  border-bottom: 0.0625rem solid #dfe4ea;
+  padding: 0.625rem 0;
+  padding-left: 2.125rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #1f59b6;
+  opacity: 1;
+}
+.form_item .user_check {
+  position: absolute;
+  width: 1.375rem;
+  right: 0;
+  height: 1.375rem;
+  bottom: 0.625rem;
+}
+.f_pwd {
+  cursor: pointer;
+  margin-top: 1.125rem;
+  padding-left: 1.5rem;
+}
+.f_pwd span {
+  float: right;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #1f59b6;
+  opacity: 1;
+}
+.sub_btn {
+  margin-top: 3.75rem;
+}
+.sub_btn button {
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  height: 2.5rem;
+  background: #1f59b6;
+  outline: none;
+  border: none;
+  border-radius: 1.5625rem;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 2.5rem;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 0.75rem 0.3125rem -0.625rem rgba(0, 0, 0, 0.1),
+    0 0 0.25rem 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0.75rem 0.3125rem -0.625rem rgba(0, 0, 0, 0.1),
+    0 0 0.25rem 0 rgba(0, 0, 0, 0.1);
+}
+.sub_btn button:hover {
+  transform: scale(1.01);
+}
+.o_other {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #a2a2a2;
+  margin-bottom: 1.3125rem;
+}
+.media {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.media img {
+  width: 2rem;
+  cursor: pointer;
+  height: 2rem;
+}
+.tip {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 17px;
+  text-align: center;
+  color: #a2a2a2;
+  margin-bottom: 1.5625rem;
+}
+.tip .reg_tip {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #1f59b6;
+}

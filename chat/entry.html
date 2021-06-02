@@ -1,14 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>进入聊天室</title>
+  <title>登录</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/entry.css">
+  <link href="https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
 </head>
+
 <body>
-  <input type="text" id="username" placeholder="请输入用户名">
-  <button id="enter">进入聊天室</button>
+  <h1 class="header_title">Welcome Back!</h1>
+  <div class="logo">
+    <img src="img/login_logo.png" alt="">
+  </div>
+  <form class="login_form">
+    <div class="form_item">
+      <img src="img/Icon feather-mail@2x.png" class="email_icon" alt="">
+      <input type="text" class="form_input" placeholder="请输入用户名" id="username" name="username" autocomplete="off" />
+      <img src="img/Icon awesome-check-circle@2x.png" class="user_check" alt="">
+    </div>
+    <div class="form_item">
+      <img src="img/Icon feather-lock@2x.png" class="lock_icon" alt="">
+      <input type="password" class="form_input" placeholder="请输入密码" id="password" name="password" autocomplete="off" />
+      <img src="img/Icon feather-eye@2x.png" class="user_eye" alt="">
+    </div>
+    <div class="f_pwd">
+      <span>忘记密码?</span>
+    </div>
+    <div class="sub_btn">
+      <button id="enter">登 录</button>
+    </div>
+  </form>
+  <form class="reg_form">
+    <div class="form_item">
+      <img src="img/Icon feather-mail@2x.png" class="email_icon" alt="">
+      <input type="text" class="form_input" placeholder="请输入用户名" id="regname" name="username" autocomplete="off" />
+      <img src="img/Icon awesome-check-circle@2x.png" class="user_check" alt="">
+    </div>
+    <div class="form_item">
+      <img src="img/Icon feather-mail@2x.png" class="email_icon" alt="">
+      <input type="text" class="form_input" placeholder="请输入邮箱地址" id="regmail" name="email" autocomplete="off" />
+      <img src="img/Icon awesome-check-circle@2x.png" class="user_check" alt="">
+    </div>
+    <div class="form_item">
+      <img src="img/Icon feather-lock@2x.png" class="lock_icon" alt="">
+      <input type="password" class="form_input" placeholder="请输入密码" id="regpwd" name="password" autocomplete="off" />
+      <img src="img/Icon feather-eye@2x.png" class="user_eye" alt="">
+    </div>
+    <div class="f_pwd">
+      <span>忘记密码?</span>
+    </div>
+    <div class="sub_btn">
+      <button id="enterReg">注 册</button>
+    </div>
+  </form>
+  <p class="o_other">其他方式</p>
+  <div class="media">
+    <img src="img/weixin.png" alt="">
+  </div>
+  <p class="tip reg_href">没有帐户?<span class="reg_tip">立即注册</span>
+  <p class="tip login_ref">已有帐户?<span class="reg_tip">立即登录</span>
+  </p>
+  <p class="tip" style="margin-bottom:0;">
+    同意隐私政策
+    <a class="reg_tip" href="http://www.baidu.com">
+      Terms & Conditions
+    </a>
+  </p>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="util/myajax.js"></script>
+  <script src="api/index.js"></script>
   <script src="js/entry.js"></script>
 </body>
+
 </html>
