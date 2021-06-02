@@ -46,10 +46,11 @@ connection.connect();
      * 保存到数据库然后再查
      */
     let body = JSON.parse(msg)
-    let insertSql = `INSERT INTO c_chat(id,dateTime,name,message) VALUES('${body.dateTime}','${body.dateTime}','${body.user}','${body.message}');`
+    let insertSql = `INSERT INTO c_chat(id,dateTime,name,message) VALUES('${body.dateTime}','${body.dateTime}','${body.name}','${body.message}');`
     connection.query(insertSql)
+    let sendBody = JSON.stringify(body)
     server.clients.forEach(c => {
-      c.send(msg)
+      c.send(sendBody)
     })
   }
   init()

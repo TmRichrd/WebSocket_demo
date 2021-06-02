@@ -19,7 +19,7 @@
     const msg = messageEl.value;
     if (msg.trim().length == 0) return
     let model = {
-      user: username,
+      name: username,
       dateTime: new Date().getTime(),
       message: msg
     }
@@ -40,20 +40,32 @@
 
   }
   function handleMessage (e) {
-    // const msgData = JSON.parse(e.data)
-    // const msgData = JSON.parse(e.data)
-    listEl.appendChild(createMsg(e.data))
-    console.log('首页接收返回信息', e);
+    const msgData = JSON.parse(e.data)
+    if (Object.prototype.toString.call(msgData) === "[object Array]")
+    {
+      console.log('是数组');
+      listEl.innerHTML = ''
+      msgData.forEach(item => {
+        listEl.appendChild(createMsg(item))
+      })
+    } else if (Object.prototype.toString.call(msgData) === "[object Object]")
+    {
+      console.log('是对象');
+      listEl.appendChild(createMsg(msgData))
+    }
+    console.log('首页接收返回信息', JSON.parse(e.data));
   }
-  function createMsg (params) {
-    const { user, dateTime, message } = params
-    const liEl = doc.createElement('li')
+  function createMsg (item) {
+    var liEl = document.createElement('li')
+    let time = moment(Number(item.dateTime)).format('YYYY-MM-DD HH:mm:ss')
     liEl.innerHTML = `
       <p>
-        <span>${user}</span>
-        <i>${new Date(dateTime)}</i>
+      <span>
+      ${item.name}
+    </span>
+      <i>${time}</i>
       </p>
-      <p>消息:${message}</p>
+    <p>${item.message}</p>
     `
     return liEl
   }
