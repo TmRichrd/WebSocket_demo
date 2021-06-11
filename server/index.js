@@ -21,23 +21,36 @@ app.all('*', function (req, res, next) {
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.post('/web/register', (req, res) => {
+app.post('/web/register', async (req, res) => {
   let { username, password, email } = req.body
-  let pwd = md5(md5(password))
-  let avatar = ''
-  var id = snowflake.nextId();
-  let sql = `INSERT INTO c_user(id,username,password,email,avatar) VALUES('${id}','${username}','${pwd}','${email}','${avatar}')`
-  connection.query(sql, (err, r) => {
-    console.log(err);
-    if (err) return res.send({
-      code: 400,
-      msg: "注册失败，请稍后重试"
-    })
-    res.send({
-      code: 200,
-      msg: "注册成功"
-    })
+  let querySql = `select * from c_user where email = '${email}'`
+  connection.query(querySql, (err, result) => {
+    if (result.length == 0)
+    {
+      let pwd = md5(md5(password))
+      let avatar = ''
+      var id = snowflake.nextId();
+      let sql = `INSERT INTO c_user(id,username,password,email,avatar) VALUES('${id}','${username}','${pwd}','${email}','${avatar}')`
+      connection.query(sql, (err, r) => {
+        console.log(err);
+        if (err) return res.send({
+          code: 201,
+          msg: "注册失败，请稍后重试"
+        })
+        res.send({
+          code: 200,
+          msg: "注册成功"
+        })
+      })
+    } else
+    {
+      res.send({
+        code: 201,
+        msg: "该邮箱已存在，请重试"
+      })
+    }
   })
+
 })
 app.get('/', (req, res) => {
   res.send('hi')
